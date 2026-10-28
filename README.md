@@ -12,7 +12,7 @@ After the setup pull request has been merged:
 2. Choose **Add → GitHub** and paste:
 
    ```text
-   https://github.com/runarfossum/react-aria-skill/tree/main/skills/react-aria
+   https://github.com/AURVEXI/react-aria-skill/tree/main/skills/react-aria
    ```
 
 3. Preview and import the `react-aria` skill. If an older skill with that name is already installed, use the workspace's replacement/update controls rather than leaving two copies enabled.
@@ -22,7 +22,7 @@ This repository stays current with Adobe. Updating an already-imported Replit wo
 For CLI-based skill installers:
 
 ```sh
-npx skills add https://github.com/runarfossum/react-aria-skill --skill react-aria
+npx skills add https://github.com/AURVEXI/react-aria-skill --skill react-aria
 ```
 
 ## How synchronization works
