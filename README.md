@@ -27,8 +27,9 @@ npx skills add https://github.com/AURVEXI/react-aria-skill --skill react-aria
 
 ## How synchronization works
 
-- GitHub Actions checks daily at **06:17 UTC** (GitHub may delay scheduled runs).
-- To check immediately, open **Actions → Sync Adobe React Aria skill → Run workflow** on the default branch.
+- The Adobe sync is scheduled **every 48 hours at 06:00 CET (05:00 UTC)**. CET means fixed UTC+1, so this is 07:00 in Central European summer time. GitHub may delay or skip scheduled runs; the time is a target, not an exact execution guarantee.
+- GitHub triggers the workflow daily, but a calendar gate skips the Adobe download and commit steps on alternate days. The cadence is anchored to October 28, 2026, and remains every second day across month and year boundaries. A `*/2` day-of-month cron would not reliably preserve a 48-hour cadence.
+- To check immediately, open **Actions → Sync Adobe React Aria skill → Run workflow** on the default branch. Manual runs bypass the calendar gate without changing the scheduled cadence.
 - The updater downloads Adobe's discovery index and the archive it advertises, verifies the advertised SHA-256 digest, and validates every archive entry before replacing the skill directory.
 - Archive links, path traversal, duplicate files, unexpected top-level files, oversized downloads, and invalid skill metadata fail closed.
 - The workflow never executes code from the downloaded bundle.
